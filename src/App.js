@@ -1,5 +1,6 @@
 import React from 'react';
 import Admin from './pages/Admin/index';
+
 import { HashRouter, Route, Redirect } from 'react-router-dom';
 import Login from './pages/Login/index'
 function App() {
@@ -14,6 +15,8 @@ function App() {
           )
         }}></Route>
       </HashRouter>
+
+
     </div>
   );
 }
