@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-
+import style from './index.module.less'
 class Alter extends Component {
 state = {}
 render() {
  return (
-     <div>
-         基本设置
+     <div className={style.box}>
+         
      </div>
     
     )
