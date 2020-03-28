@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.less';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Icon } from 'antd';
 import RightNav from '../RightNav/index.js'
 const { Header, Sider, Content } = Layout;
 class Admin extends Component{

@@ -8,7 +8,7 @@ class RightNav extends Component {
     collapsed: false,
   }
   handleClick=(e)=> {
-    console.log('click ', e);
+    // console.log('click ', e);
     let { path } = e.item.props
     this.props.history.replace(path)
   }
@@ -16,7 +16,7 @@ class RightNav extends Component {
     return data.map((item, index) => {
       if (item.children) {
         return (
-          <SubMenu key={item.key} title={(() => {
+          <SubMenu key={item.key}  title={(() => {
             return (
               <span>
                 <Icon type={item.icon} />
