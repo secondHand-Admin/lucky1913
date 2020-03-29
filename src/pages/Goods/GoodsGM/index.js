@@ -11,6 +11,7 @@ class GoodsGM extends Component {
         columns: [
             { title: '编号', dataIndex: '_id', key: '_id', width: 100, fixed: 'left' },
             { title: '名称', dataIndex: 'name', key: 'name', width: 120 },
+            { title: '时间', dataIndex: 'createTime', key: 'createTime', width: 120 },
             { title: '库存', dataIndex: 'stock', key: 'stock', width: 80 },
             { title: '价格', dataIndex: 'price', key: 'price', width: 120 },
             { title: '类别', dataIndex: 'kind', key: 'kind', width: 120, render(kind) {
@@ -26,12 +27,13 @@ class GoodsGM extends Component {
             },
             { title: '描述', dataIndex: 'desc', key: 'desc', width: 200 },
             { title: '单位', dataIndex: 'unit', key: 'unit', width: 80 },
-            // { title: '状态', dataIndex: 'putaway', key: 'putaway', render(putaway) {
-            //         console.log(putaway)
-            //         let obj = { '-1': { color: 'red', msg: '已下架' }, '0': { color: 'yellow', msg: '未上架' }, '1': { color: 'green', msg: '已上架' } }
-            //         return (<Tag color={obj[putaway].color}>{obj[putaway].msg}</Tag>)
-            //     }, width: 120
-            // },
+            { title: '状态', dataIndex: 'putaway', key: 'putaway', render(putaway) {
+                    console.log(putaway)
+                    let obj = { '-1': { color: 'red', msg: '已下架' }, '0': { color: 'yellow', msg: '未上架' }, '1': { color: 'green', msg: '已上架' } }
+                    // return (<Tag color={obj[putaway].color}>{obj[putaway].msg}</Tag>)
+                }, width: 120
+            },
+            { title: '操作', key: 'action', width: 120, fixed: 'right',  }
             // { title: '操作', key: 'action', width: 120, fixed: 'right', render: (recode) => {
             //         return (
             //             <div>
