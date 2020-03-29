@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './index.less';
+import style from './index.module.less';
 import { Layout, Icon } from 'antd';
 import RightNav from '../RightNav/index.js'
 const { Header, Sider, Content } = Layout;
@@ -27,8 +27,10 @@ class Admin extends Component{
             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
             onClick={this.toggle}
           />
+          <span className={style.title}>欢迎来到柚子校园后台管理---lucky1913</span>
         </Header>
         <Content
+          className={style.contentBox}
           style={{
             margin: '24px 16px',
             padding: 24,
@@ -36,7 +38,6 @@ class Admin extends Component{
             minHeight: window.innerHeight-112,
           }}
         >
-          欢迎来到管理员界面
           {this.props.children}
         </Content>
       </Layout>
