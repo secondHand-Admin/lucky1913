@@ -18,11 +18,7 @@ class Login extends Component {
                         message.error('用户名密码错误')
                     } else {
                         // 登录成功获取token并且保存到localstorage里 
-<<<<<<< HEAD
                         localStorage.setItem('token', res.token)
-=======
-                        localStorage.setItem('token',res.token)                        
->>>>>>> 0cafc9b2f593fce11b41dc020dd215eb8c0cd230
                         message.success('登录成功，3s后跳转首页', 3, () => {
                             this.props.history.replace('/admin')
                         })

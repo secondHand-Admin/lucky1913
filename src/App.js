@@ -20,19 +20,6 @@ function App() {
         <Route path="/admin" render={() => {
           return (
             <Admin>
-<<<<<<< HEAD
-              <Route path='/admin/goodsInfo' component={GoodsGM}></Route>
-              <Route path='/admin/goodsKind' component={GoodsLB}></Route>
-              <Route path='/admin/administrator/adminList' component={AdminiStratorList}></Route>
-              <Route path='/admin/administrator/adminAdd' component={AdminiStratorAdd}></Route>
-              <Route path="/admin/set/basic" component={PersonalBasic}></Route>
-              <Route path="/admin/set/alter" component={PersonalAlter}></Route>
-              <Route path="/admin/set/binding" component={PersonalBinding}></Route>
-              {/* <Route path='/admin/set' component={PersonalNav}>
-
-              </Route> */}
-
-=======
               <Switch>
                 <Redirect exact from='/admin' to='/admin/home'></Redirect>
                 <Route path='/admin/home' component={Home}></Route>
@@ -40,9 +27,10 @@ function App() {
                 <Route path='/admin/goodsKind' component={GoodsLB}></Route>
                 <Route path='/admin/administrator/adminList' component={AdminiStratorList}></Route>
                 <Route path='/admin/administrator/adminAdd' component={AdminiStratorAdd}></Route>
-                <Route path='/admin/set' component={PersonalNav}></Route>
+                <Route path="/admin/set/basic" component={PersonalBasic}></Route>
+              <Route path="/admin/set/alter" component={PersonalAlter}></Route>
+              <Route path="/admin/set/binding" component={PersonalBinding}></Route>
               </Switch>
->>>>>>> 0cafc9b2f593fce11b41dc020dd215eb8c0cd230
             </Admin>
           )
         }}></Route>
