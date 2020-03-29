@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Icon,Modal } from 'antd'
+import style from './index.module.less'
 class Alter extends Component {
     state = { visible: false }
     showModal = () => {
@@ -22,7 +23,7 @@ class Alter extends Component {
   };
     render() {
         return (
-            <div>
+            <div className={style.box}>
                 <h1>账号绑定</h1>
                 <p style={{ width: "80%", margin: " 0 auto" }}><span>
                     <Icon type="taobao" style={{ fontSize: "40px", color: " #ff4000" }} />绑定淘宝</span> <Button type="primary" onClick={this.showModal} style={{ width: 65, height: 40, float: "right" }}>绑定</Button>
