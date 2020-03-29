@@ -17,6 +17,8 @@ class Login extends Component {
                     if (res.code === 404) {
                         message.error('用户名密码错误')
                     } else {
+                        // 登录成功获取token并且保存到localstorage里 
+                        localStorage.setItem('token',res.token)                        
                         message.success('登录成功，3s后跳转首页', 3, () => {
                             this.props.history.replace('/admin')
                         })
@@ -56,8 +58,8 @@ class Login extends Component {
                             { max: 10, message: '密码最大长度10位' }]
                         })(
                             <Input
-                                prefix={<Icon type="eye-invisible" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                placeholder="PassWord"
+                                prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                placeholder="PassWord" type="password"
                             />
                         )}
                     </Form.Item>
