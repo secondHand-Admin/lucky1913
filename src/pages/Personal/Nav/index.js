@@ -6,7 +6,6 @@ import MenuList from './menulist'
 import PersonalAlter from '../alter/index'
 import PersonalBasic from '../basic/index'
 import PersonalBinding from '../binding/index'
-import PersonalInform from '../inform/index'
 const { Header } = Layout;
 class Personal extends Component {
     state = {}
@@ -16,7 +15,7 @@ class Personal extends Component {
     }
     NavList(data) {
         return data.map((item, index) => {
-            return (<Menu.Item key={item.key} path={item.path}>
+            return (<Menu.Item key={item.key} path={item.path} className={style.list}>
                 <span>{item.title}</span>
             </Menu.Item>
             )
@@ -28,7 +27,7 @@ class Personal extends Component {
                 <Layout className="layout">
                     <Header style={{padding:'unset'}}>
                         <div className="logo" />
-                        <Menu
+                        <Menu 
                             onClick={this.handle}
                             mode="horizontal"
                             defaultSelectedKeys={['1']}
@@ -40,7 +39,6 @@ class Personal extends Component {
                         <Route path="/admin/set/basic" component={PersonalBasic}></Route>
                         <Route path="/admin/set/alter" exact component={PersonalAlter}></Route>
                         <Route path="/admin/set/binding" component={PersonalBinding}></Route>
-                        <Route path="/admin/set/inform" component={PersonalInform}></Route>
                     </Header>
 
                 </Layout>
