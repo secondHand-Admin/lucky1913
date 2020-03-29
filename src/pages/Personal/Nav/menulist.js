@@ -13,9 +13,5 @@ export default [
         key: '3',
         title: '账号绑定',
         path: '/admin/set/binding'
-    }, {
-        key: '4',
-        title: "新消息通知",
-        path: '/admin/set/inform'
     }
 ]
