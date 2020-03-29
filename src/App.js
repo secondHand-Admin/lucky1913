@@ -13,6 +13,7 @@ function App() {
     <div className="App">
       <HashRouter>
         <Route path='/login' component={Login}></Route>
+        <Redirect exact from='/admin' to='/admin/home'></Redirect>
         <Route path="/admin" render={() => {
           return (
             <Admin>
@@ -26,7 +27,6 @@ function App() {
             </Admin>
           )
         }}></Route>
-        <Redirect exact from='/admin' to='/admin/home'></Redirect>
       </HashRouter>
     </div>
   );
