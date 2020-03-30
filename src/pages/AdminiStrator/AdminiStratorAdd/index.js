@@ -7,7 +7,6 @@ class UserAdd extends Component {
         dataSource: []
     }
     handleOk = async () => {
-        console.log(this);
         // 获取输入内容
         let userName = this.refs.us.value
         let passWord = this.refs.ps.value

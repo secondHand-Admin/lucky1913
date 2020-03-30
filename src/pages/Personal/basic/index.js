@@ -13,7 +13,7 @@ class Alter extends Component {
         site: '广东省/广州市/天河区',
         name: null,
         article: null,
-        mail: '你的邮箱',
+        mail: null,
         path: ""
     }
 
@@ -62,20 +62,24 @@ class Alter extends Component {
     }
     submit = async () => {
         if (!this.state.path) { return message.info('请上传图片') }
-        // 获取地址    
-        this.setState({ site: this.refs.site.state.value })
+        // 获取地址   
+        let site = this.refs.site.state.value
+        this.setState({ site: site})
         // 邮箱
-        this.setState({ mail: this.refs.mail.state.value })
+        let mail=this.refs.mail.state.value
+        this.setState({ mail: mail })
         //获取输入的名字
         let name = this.refs.name.state.value
         //获取个人简介 
-        this.setState({ article: this.refs.article.state.value })
+        let article=this.refs.article.state.value
+        this.setState({ article: article})
         // 获取src
         let img = this.state.path
-        console.log(img);
-        
-        if (!name) {
+        if (name==null) {
             return message.info('请输入昵称')
+        }
+        if (!mail) {
+            return message.info('请输入邮箱')
         }
         let { code, msg } = await adminApi.amend(id, name, password, img)
         if (code) {

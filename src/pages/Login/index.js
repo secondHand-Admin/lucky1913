@@ -7,19 +7,16 @@ class Login extends Component {
         console.log('登录', this)
         let { validateFields } = this.props.form //用户获取表单数据的值
         validateFields((err, data) => {
-            // console.log(err, data)
+         
             if (err) {
                 // 输入错误
                 message.error('输入有误请重试')
             } else {
                 api.login(data).then((res) => {
-                    console.log(res)
                     if (res.code === 404) {
                         message.error('用户名密码错误')
                     } else {
-                        // 登录成功获取token并且保存到localstorage里 
-                        console.log(data);
-                        
+                        // 登录成功获取token并且保存到localstorage里  
                         localStorage.setItem('token', res.token)
                         localStorage.setItem("_id",res.userInfo._id)
                         localStorage.setItem("passWord",data.passWord)

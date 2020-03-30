@@ -28,7 +28,7 @@ class GoodsGM extends Component {
             { title: '描述', dataIndex: 'desc', key: 'desc', width: 200 },
             { title: '单位', dataIndex: 'unit', key: 'unit', width: 80 },
             { title: '状态', dataIndex: 'putaway', key: 'putaway', render(putaway) {
-                    console.log(putaway)
+                  
                     let obj = { '-1': { color: 'red', msg: '已下架' }, '0': { color: 'yellow', msg: '未上架' }, '1': { color: 'green', msg: '已上架' } }
                     // return (<Tag color={obj[putaway].color}>{obj[putaway].msg}</Tag>)
                 }, width: 120

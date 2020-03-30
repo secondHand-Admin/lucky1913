@@ -4,7 +4,6 @@ import { Input, Button, message } from 'antd'
 import adminApi from '../../../api/admin'
 let id = localStorage.getItem('_id')
 let name= localStorage.getItem("name")
-// let password = localStorage.getItem("passWord")
 class Alter extends Component {
     state = {
 
@@ -18,9 +17,7 @@ class Alter extends Component {
             return message.error('输入的名称错误')
         } else if (newpwA !== newpwB) {
             return message.error('密码不一致')
-        } else {
-            console.log(newpwA,name);
-            
+        } else {      
             let { code, msg } = await adminApi.amend(id,oldpw,newpwA)
             if (code) {
                 return message.error(msg)
