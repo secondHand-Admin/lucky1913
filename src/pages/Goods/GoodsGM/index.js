@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import API from '../../../api/goods'
 import { Card, message, Table } from 'antd'
+<<<<<<< HEAD
+=======
+// import style from './index.module.less'
+>>>>>>> 86db9f51efa058eca3a16b3b2a2ad463f5655964
 class GoodsGM extends Component {
     state = {
         page: 1,//页码数
@@ -25,6 +29,10 @@ class GoodsGM extends Component {
             { title: '描述', dataIndex: 'desc', key: 'desc', width: 200 },
             { title: '单位', dataIndex: 'unit', key: 'unit', width: 80 },
             { title: '状态', dataIndex: 'putaway', key: 'putaway', render(putaway) {
+<<<<<<< HEAD
+=======
+                  
+>>>>>>> 86db9f51efa058eca3a16b3b2a2ad463f5655964
                     let obj = { '-1': { color: 'red', msg: '已下架' }, '0': { color: 'yellow', msg: '未上架' }, '1': { color: 'green', msg: '已上架' } }
                     return (<Tag color={obj[putaway].color}>{obj[putaway].msg}</Tag>)
                 }, width: 120, height: 80
