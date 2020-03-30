@@ -13,10 +13,14 @@ class Admin{
         let url='/lucky/admin'
         return axios.delete(url+'/'+_id)
     }
-    amend(_id,userName,article){
+    amend(_id,userName,passWord,img){
         let url='/lucky/admin'
-        return axios.PUT(url+'/'+_id,{userName,article})
-
+        return axios.put(url+'/'+_id,{userName,passWord,img})
     }
+    img(Img){
+        let url='/lucky/upload/uploadImg'
+        return axios.post(url,Img)
+    }
+   
 }
 export default new Admin()

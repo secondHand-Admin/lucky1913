@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
-        <Redirect exact from='/' to='/login'></Redirect>
+        {/* <Redirect exact from='/' to='/login'></Redirect> */}
        <Route path='/login' component={Login}></Route>
         <Route path="/admin" render={() => {
           return (
