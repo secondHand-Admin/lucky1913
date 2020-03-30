@@ -10,11 +10,13 @@ import AdminiStratorAdd from './pages/AdminiStrator/AdminiStratorAdd/index'
 import PersonalAlter from './pages/Personal/alter/index'
 import PersonalBasic from './pages/Personal/basic/index'
 import PersonalBinding from './pages/Personal/binding/index'
+import Userlist from './pages/User/Userlist'
 // import PersonalNav from './pages/Personal/Nav/index'
 function App() {
   return (
     <div className="App">
       <HashRouter>
+      <Switch>
         <Redirect exact from='/' to='/login'></Redirect>
         <Route path='/login' component={Login}></Route>
         <Route path="/admin" render={() => {
@@ -28,13 +30,14 @@ function App() {
                 <Route path='/admin/administrator/adminList' component={AdminiStratorList}></Route>
                 <Route path='/admin/administrator/adminAdd' component={AdminiStratorAdd}></Route>
                 <Route path="/admin/set/basic" component={PersonalBasic}></Route>
-                <Route path="/admin/set/alter" component={PersonalAlter}></Route>
-                <Route path="/admin/set/binding" component={PersonalBinding}></Route>
+              <Route path="/admin/set/alter" component={PersonalAlter}></Route>
+              <Route path="/admin/set/binding" component={PersonalBinding}></Route>
+              <Route path="/admin/user/userlist" component={Userlist}></Route>
               </Switch>
             </Admin>
           )
         }}></Route>
-
+       </Switch>
       </HashRouter>
     </div>
   );

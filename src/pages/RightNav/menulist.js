@@ -35,13 +35,13 @@ export default[
        key:'3-1',
        title:"用户添加",
        icon:'user',
-       path:'/admin/useradd'
+       path:'/admin/user/useradd'
       },
      {
       key:'3-2',
       icon:'team',
       title:"用户列表",
-      path:'/admin/userlist'
+      path:'/admin/user/userlist'
     }
    ]
   },
