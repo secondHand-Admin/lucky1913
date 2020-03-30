@@ -100,7 +100,27 @@ export default[
   {
     key:'9',
     title:"个人中心",
+    icon:'appstore',
+    path:'/admin/set',
+    children:[
+      {
+        key: '1',
+        title: '基本设置',
     icon:'setting',
-    path:'/admin/set'
+        path: '/admin/set/basic'
+    },
+    {
+        key: '2',
+        title: '安全设置',
+        icon:"lock",
+        path: '/admin/set/alter',
+    },
+    {
+        key: '3',
+        title: '账号绑定',
+        icon:'apartment',
+        path: '/admin/set/binding'
+    }
+    ]
   }
 ]
