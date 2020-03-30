@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import API from '../../../api/goods'
-import { Card, message, Table, Tag, Button, Popconfirm, Pagination } from 'antd'
-// import style from './index.module.less'
-
+import { Card, message, Table } from 'antd'
 class GoodsGM extends Component {
     state = {
         page: 1,//页码数
@@ -15,22 +13,18 @@ class GoodsGM extends Component {
             { title: '时间', dataIndex: 'createTime', key: 'createTime', width: 120, height: 80 },
             { title: '库存', dataIndex: 'stock', key: 'stock', width: 80, height: 80 },
             { title: '价格', dataIndex: 'price', key: 'price', width: 120, height: 80 },
-            {
-                title: '类别', dataIndex: 'kind', key: 'kind', width: 120, height: 80, render(kind) {
+            { title: '类别', dataIndex: 'kind', key: 'kind', width: 120, height: 80, render(kind) {
                     return (<span>{kind ? kind.kindName : '暂无类别'}</span>)
                 }
             },
-            {
-                title: '图片', dataIndex: 'src', key: 'src', render(path) {
+            {title: '图片', dataIndex: 'src', key: 'src', render(path) {
                     let src = path
                     return (<img width='120' height='80' src={src} alt='' />)
                 }, width: 150, height: 80
             },
-            { title: '描述', dataIndex: 'ss', key: 'ss', width: 200, height: 80 },
-            { title: '单位', dataIndex: 'unit', key: 'unit', width: 80, height: 80 },
-            {
-                title: '状态', dataIndex: 'putaway', key: 'putaway', render(putaway) {
-
+            { title: '描述', dataIndex: 'desc', key: 'desc', width: 200 },
+            { title: '单位', dataIndex: 'unit', key: 'unit', width: 80 },
+            { title: '状态', dataIndex: 'putaway', key: 'putaway', render(putaway) {
                     let obj = { '-1': { color: 'red', msg: '已下架' }, '0': { color: 'yellow', msg: '未上架' }, '1': { color: 'green', msg: '已上架' } }
                     return (<Tag color={obj[putaway].color}>{obj[putaway].msg}</Tag>)
                 }, width: 120, height: 80

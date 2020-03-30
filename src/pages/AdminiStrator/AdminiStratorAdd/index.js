@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
 import style from './index.module.less'
-import { Card, Button } from 'antd'
+import { Card, Button, message } from 'antd'
 import adminapi from '../../../api/admin'
 class UserAdd extends Component {
     state = {
         dataSource: []
     }
-    handleOk = () => {
+    handleOk = async () => {
         // 获取输入内容
         let userName = this.refs.us.value
         let passWord = this.refs.ps.value
-    //   获取成功后添加接口
-    let usandpass = adminapi.AdminiStratorAdd({userName,passWord})
-    console.log(usandpass);
-    
+        //   获取成功后添加接口
+        let usandpass = await adminapi.AdminiStratorAdd({ userName, passWord })
+        if (usandpass.code !== 0) {
+            return message.Error(usandpass.msg)
+        }
+        message.success(usandpass.msg)
     }
     render() {
         return (

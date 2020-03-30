@@ -35,13 +35,13 @@ export default[
        key:'3-1',
        title:"用户添加",
        icon:'user',
-       path:'/admin/useradd'
+       path:'/admin/user/useradd'
       },
      {
       key:'3-2',
       icon:'team',
       title:"用户列表",
-      path:'/admin/userlist'
+      path:'/admin/user/userlist'
     }
    ]
   },
@@ -100,7 +100,27 @@ export default[
   {
     key:'9',
     title:"个人中心",
+    icon:'appstore',
+    path:'/admin/set',
+    children:[
+      {
+        key: '1',
+        title: '基本设置',
     icon:'setting',
-    path:'/admin/set'
+        path: '/admin/set/basic'
+    },
+    {
+        key: '2',
+        title: '安全设置',
+        icon:"lock",
+        path: '/admin/set/alter',
+    },
+    {
+        key: '3',
+        title: '账号绑定',
+        icon:'apartment',
+        path: '/admin/set/binding'
+    }
+    ]
   }
 ]
