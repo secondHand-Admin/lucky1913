@@ -16,20 +16,11 @@ class Login extends Component {
                     if (res.code === 404) {
                         message.error('用户名密码错误')
                     } else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        // 登录成功获取token并且保存到localstorage里 
-                        localStorage.setItem('token',res.token)                        
-                        message.success('登录成功，1s后跳转首页', 1, () => {
-=======
-=======
->>>>>>> 86db9f51efa058eca3a16b3b2a2ad463f5655964
                         // 登录成功获取token并且保存到localstorage里  
                         localStorage.setItem('token', res.token)
                         localStorage.setItem("_id",res.userInfo._id)
                         localStorage.setItem("passWord",data.passWord)
                         message.success('登录成功，3s后跳转首页', 3, () => {
->>>>>>> 86db9f51efa058eca3a16b3b2a2ad463f5655964
                             this.props.history.replace('/admin')
                         })
                     }
