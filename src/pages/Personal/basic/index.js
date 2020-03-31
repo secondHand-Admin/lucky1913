@@ -7,7 +7,6 @@ import uploadApi from '../../../api/admin'
 const { TextArea } = Input;
 let id = localStorage.getItem('_id')
 let password = localStorage.getItem("passWord")
-
 class Alter extends Component {
     state = {
         site: '广东省/广州市/天河区',
@@ -64,18 +63,20 @@ class Alter extends Component {
         if (!this.state.path) { return message.info('请上传图片') }
         // 获取地址   
         let site = this.refs.site.state.value
-        this.setState({ site: site})
+        this.setState({ site: site })
         // 邮箱
-        let mail=this.refs.mail.state.value
+        let mail = this.refs.mail.state.value
         this.setState({ mail: mail })
         //获取输入的名字
+      
+
         let name = this.refs.name.state.value
         //获取个人简介 
-        let article=this.refs.article.state.value
-        this.setState({ article: article})
+        let article = this.refs.article.state.value
+        this.setState({ article: article })
         // 获取src
         let img = this.state.path
-        if (name==null) {
+        if (name == null) {
             return message.info('请输入昵称')
         }
         if (!mail) {
@@ -87,7 +88,7 @@ class Alter extends Component {
         } else {
             localStorage.setItem('name', name)
             return message.success(msg)
-           
+
         }
 
     }
