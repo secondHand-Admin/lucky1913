@@ -33,9 +33,9 @@ function App() {
                 <Route path='/admin/administrator/adminList' component={AdminiStratorList}></Route>
                 <Route path='/admin/administrator/adminAdd' component={AdminiStratorAdd}></Route>
                 <Route path="/admin/set/basic" component={PersonalBasic}></Route>
-              <Route path="/admin/set/alter" component={PersonalAlter}></Route>
-              <Route path="/admin/set/binding" component={PersonalBinding}></Route>
-              <Route path="/admin/user/userlist" component={Userlist}></Route>
+                <Route path="/admin/set/alter" component={PersonalAlter}></Route>
+                <Route path="/admin/set/binding" component={PersonalBinding}></Route>
+                <Route path="/admin/user/userlist" component={Userlist}></Route>
               </Switch>
             </Admin>
           )
@@ -43,6 +43,10 @@ function App() {
        </Switch>
       </HashRouter>
     </div>
+<<<<<<< HEAD
   );
+=======
+  )
+>>>>>>> xiao2
 }
 export default App;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import API from '../../../api/goods'
-import { Card, message, Table } from 'antd'
+import { Card, message, Table,Popconfirm,Button,Pagination,Tag } from 'antd'
 // import style from './index.module.less'
 class GoodsGM extends Component {
     state = {

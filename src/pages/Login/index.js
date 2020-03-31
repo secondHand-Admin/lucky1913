@@ -7,7 +7,6 @@ class Login extends Component {
         console.log('登录', this)
         let { validateFields } = this.props.form //用户获取表单数据的值
         validateFields((err, data) => {
-         
             if (err) {
                 // 输入错误
                 message.error('输入有误请重试')
@@ -24,13 +23,11 @@ class Login extends Component {
                             this.props.history.replace('/admin')
                         })
                     }
-
                 })
             }
         })
     }
     render() {
-
         const { getFieldDecorator } = this.props.form;
         // getFieldDecorator返回一个高阶组件 用于和表单进行双向数据绑定
         return (
