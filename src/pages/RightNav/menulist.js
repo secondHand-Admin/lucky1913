@@ -32,12 +32,6 @@ export default[
    path:'/admin/user',
    children:[
      {
-       key:'3-1',
-       title:"用户添加",
-       icon:'user',
-       path:'/admin/user/useradd'
-      },
-     {
       key:'3-2',
       icon:'team',
       title:"用户列表",
@@ -106,7 +100,7 @@ export default[
       {
         key: '1',
         title: '基本设置',
-    icon:'setting',
+        icon:'setting',
         path: '/admin/set/basic'
     },
     {

@@ -16,31 +16,30 @@ class Admin extends Component{
   render(){
     return(
       <Layout>
-      <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-        <div className="logo" />
-       <RightNav></RightNav>
-      </Sider>
-      <Layout>
-        <Header style={{ background: '#fff', paddingLeft: 16,fontSize:20 }}>
-          <Icon
-            className="trigger"
-            type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-            onClick={this.toggle}
-          />
-          <span className={style.title}>欢迎来到柚子校园后台管理---lucky1913</span>
-        </Header>
-        <Content
-          className={style.contentBox}
-          style={{
-            margin: '24px 16px',
-            
-            background: '#fff',
-            minHeight: window.innerHeight-112,
-          }}
-        >
-          {this.props.children}
-        </Content>
-      </Layout>
+        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+          <div className="logo" />
+        <RightNav></RightNav>
+        </Sider>
+        <Layout>
+          <Header style={{ background: '#fff', paddingLeft: 16,fontSize:20 }}>
+            <Icon
+              className="trigger"
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={this.toggle}
+            />
+            <span className={style.title}>欢迎来到柚子校园后台管理---lucky1913</span>
+          </Header>
+          <Content
+            className={style.contentBox}
+            style={{
+              margin: '24px 16px',
+              background: '#fff',
+              minHeight: window.innerHeight-112,
+            }}
+          >
+            {this.props.children}
+          </Content>
+        </Layout>
     </Layout>
     )
   }
