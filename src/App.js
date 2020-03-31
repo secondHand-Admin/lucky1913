@@ -43,10 +43,6 @@ function App() {
        </Switch>
       </HashRouter>
     </div>
-<<<<<<< HEAD
-  );
-=======
   )
->>>>>>> xiao2
 }
 export default App;
