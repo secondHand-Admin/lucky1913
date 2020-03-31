@@ -9,26 +9,28 @@ class GoodsGM extends Component {
         list: [],//列表数据
         count: 0,//总数量
         columns: [
-            { title: '编号', dataIndex: '_id', key: '_id', width: 100, height: 80 },
-            { title: '名称', dataIndex: 'name', key: 'name', width: 120, height: 80 },
-            { title: '时间', dataIndex: 'createTime', key: 'createTime', width: 120, height: 80 },
-            { title: '库存', dataIndex: 'stock', key: 'stock', width: 80, height: 80 },
-            { title: '价格', dataIndex: 'price', key: 'price', width: 120, height: 80 },
-            { title: '类别', dataIndex: 'kind', key: 'kind', width: 120, height: 80, render(kind) {
+            { title: '编号', dataIndex: '_id', key: '_id', width: 100, height: 80, fixed: 'left', overflow:' hidden'},
+            { title: '名称', dataIndex: 'name', key: 'name', width: 120, height: 80, overflow: ' hidden'},
+            { title: '时间', dataIndex: 'createTime', key: 'createTime', width: 120, height: 80, overflow: ' hidden'},
+            { title: '库存', dataIndex: 'stock', key: 'stock', width: 80, height: 80, overflow: ' hidden' },
+            { title: '价格', dataIndex: 'price', key: 'price', width: 120, height: 80, overflow: ' hidden'},
+            { title: '类别', dataIndex: 'kind', key: 'kind', width: 120, height: 80, overflow: ' hidden',render(kind) {
                     return (<span>{kind ? kind.kindName : '暂无类别'}</span>)
                 }
             },
             { title: '图片', dataIndex: 'src', key: 'src', render(path) {
                     let src = path
                     return (<img width='120' height='80' src={src} alt='' />)
-                }, width: 150, height: 80 },
-            { title: '描述', dataIndex: 'desc', key: 'desc', width: 200 },
-            { title: '单位', dataIndex: 'unit', key: 'unit', width: 80 },
+            }, width: 150, height: 80, overflow: ' hidden'},
+            { title: '描述', dataIndex: 'desc', key: 'desc', width: 100, overflow: ' hidden'},
+            { title: '单位', dataIndex: 'unit', key: 'unit', width: 80, overflow: ' hidden'},
             { title: '状态', dataIndex: 'putaway', key: 'putaway', render(putaway) {
               let obj = { '-1': { color: 'red', msg: '已下架' }, '0': { color: 'yellow', msg: '未上架' }, '1': { color: 'green', msg: '已上架' } }
-                    return (<Tag color={obj[putaway].color}>{obj[putaway].msg}</Tag>)  }, width: 120, height: 80  },
+                return (<Tag color={obj[putaway].color}>{obj[putaway].msg}</Tag>)
+            }, width: 120, height: 80, overflow: ' hidden' },
 
-            { title: '操作', key: 'action', width: 120, height: 80, render: (recode) => {
+            {
+                title: '操作', key: 'action', width: 120, height: 80, fixed: 'right', render: (recode) => {
                     return (
                         <div>
                             <Popconfirm title="请确认删除" cancelText="No" okText="Yes"
@@ -90,7 +92,7 @@ class GoodsGM extends Component {
                 <Button type='primary' onClick={() => {
                     this.props.history.push('/admin/goodsAdd')
                 }}>商品添加</Button>
-                <Table scroll={{ y: 390 }} columns={columns} dataSource={list} pagination={false} rowKey='_id'></Table>
+                <Table scroll={{ y: 390 ,x:1110}} columns={columns} dataSource={list} pagination={false} rowKey='_id'></Table>
                 <Pagination size="small" total={100} onChange={(page, pageSize) => {
                     //只要页码数发生改变就会触发          
                     this.setState({ page }, () => {
