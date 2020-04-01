@@ -104,7 +104,7 @@ class Userlist extends Component {
       <div style={{ padding: '30px' }}>
         <Card title="用户列表" bordered={false}>
           <Spin spinning={spinning}>
-            <Table columns={columns} dataSource={data} pagination={false} rowKey='_id' scroll={{y:300}} />
+            <Table columns={columns} dataSource={data} pagination={false} rowKey='_id' scroll={{y:300,x:1500}} />
           </Spin>
           <div>
             <Pagination showQuickJumper defaultPageSize={3} defaultCurrent={1} total={count} onChange={this.onChange} style={{marginTop:20}} />

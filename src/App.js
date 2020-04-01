@@ -13,6 +13,7 @@ import PersonalBasic from './pages/Personal/basic/index'
 import PersonalBinding from './pages/Personal/binding/index'
 import Userlist from './pages/User/Userlist'
 // import PersonalNav from './pages/Personal/Nav/index'
+import Examine from './pages/Examine/index'
 function App() {
   return (
     <div className="App">
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/admin/set/alter" component={PersonalAlter}></Route>
                 <Route path="/admin/set/binding" component={PersonalBinding}></Route>
                 <Route path="/admin/user/userlist" component={Userlist}></Route>
+                <Route path='/admin/msgCheck' component={Examine}></Route>
               </Switch>
             </Admin>
           )
