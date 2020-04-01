@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Card, Table, Popconfirm, message,Pagination,Spin } from 'antd';
+import { Card, Table, Popconfirm, message, Pagination, Spin } from 'antd';
 import userApi from '../../api/user'
 class Userlist extends Component {
   state = {
     data: [],
-    spinning:false,
-    page:1,
-    pagesize:3,
-    count:0,
+    spinning: false,
+    page: 1,
+    pagesize: 3,
+    count: 0,
     columns: [
       {
         title: '用户id',
@@ -37,12 +37,13 @@ class Userlist extends Component {
         title: '用户等级',
         dataIndex: 'leavel',
         key: 'leavel',
+        width: 100
       },
       {
         title: '头像',
         key: 'src',
         dataIndex: 'src',
-        width:130,
+        width: 130,
         render: (path) => {
           let src = path
           return (
@@ -73,12 +74,12 @@ class Userlist extends Component {
     ]
   }
   renderUserList = async () => {
-    let {page,pagesize}=this.state
+    let { page, pagesize } = this.state
     this.setState({ spinning: true })
     // 分页显示
-    let data = await userApi.userList(page,pagesize)
-    // console.log(data,pagesize)
-    this.setState({ data: data.userList,spinning: false,count:data.count })
+    let data = await userApi.userList(page, pagesize)
+    console.log(data, pagesize)
+    this.setState({ data: data.userList, spinning: false, count: data.count })
   }
   del = async (id) => {
     let res = await userApi.userdel(id)
@@ -91,23 +92,23 @@ class Userlist extends Component {
   componentDidMount() {
     this.renderUserList()
   }
-  onChange=(page,pagesize)=>{
+  onChange = (page, pagesize) => {
     // console.log('分页',page,pagesize)
     // setstate是异步
-    this.setState({page},()=>{
+    this.setState({ page }, () => {
       this.renderUserList()
     })
   }
   render() {
-    let { columns, data,spinning,count } = this.state
+    let { columns, data, spinning, count } = this.state
     return (
       <div style={{ padding: '30px' }}>
         <Card title="用户列表" bordered={false}>
           <Spin spinning={spinning}>
-            <Table columns={columns} dataSource={data} pagination={false} rowKey='_id' scroll={{y:300,x:1500}} />
+            <Table columns={columns} dataSource={data} pagination={false} rowKey='_id' scroll={{ y: 300 }} />
           </Spin>
           <div>
-            <Pagination showQuickJumper defaultPageSize={3} defaultCurrent={1} total={count} onChange={this.onChange} style={{marginTop:20}} />
+            <Pagination defaultCurrent={1} showQuickJumper pageSize={3} total={count} onChange={this.onChange} />
           </div>
         </Card>
       </div>

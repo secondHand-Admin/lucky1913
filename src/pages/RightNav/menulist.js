@@ -70,19 +70,7 @@ export default[
         icon:'pie-chart',
         title:'饼状图',
         path:'/admin/echarts/pie'
-      },
-      {
-        key:'5-2',
-        title:'折线图',
-        icon:'line-chart',
-        path:'/admin/echarts/line'
-      },
-      {
-        key:'5-3',
-        title:'柱状图',
-        icon:'bar-chart',
-        path:'/admin/echarts/bar'
-      },
+      }
     ]
   },
   {
