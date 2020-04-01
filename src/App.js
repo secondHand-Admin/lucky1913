@@ -11,17 +11,14 @@ import AdminiStratorAdd from './pages/AdminiStrator/AdminiStratorAdd/index'
 import PersonalAlter from './pages/Personal/alter/index'
 import PersonalBasic from './pages/Personal/basic/index'
 import PersonalBinding from './pages/Personal/binding/index'
-<<<<<<< HEAD
 import Analysis from './pages/AnalysisData'
-=======
 import Userlist from './pages/User/Userlist'
->>>>>>> e840ac1ea5536a4f11775811bc24bd0fb7619d4a
 // import PersonalNav from './pages/Personal/Nav/index'
 function App() {
   return (
     <div className="App">
       <HashRouter>
-        {/* <Redirect exact from='/' to='/login'></Redirect> */}
+        <Redirect exact from='/' to='/login'></Redirect>
         <Switch>
           <Redirect exact from='/' to='/login'></Redirect>
           <Route path='/login' component={Login}></Route>
